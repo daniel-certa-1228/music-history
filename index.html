@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Music History</title>
+	  <link rel="stylesheet" type="text/css" href="css/mh.css">
+	</head>
+
+	<body>
+
+		<header>
+			<h1>musicHistory</h1>
+			<nav>
+				<ul>
+					<li>View Music</li>
+					<li><a href="#">Add Music</a></li>
+					<li><a href="">Profile</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container-div"> <!--container div -->
+			<aside id="control-panel"> <!-- SIDEBAR -->
+				<form>
+					<div id="slider-wrapper">
+						<label for="song-length-slider">Song-Length</label><br>
+						<!-- slider -->
+						<input id="song-length-slider" type="range" min="120" max="600" value="240" list="tickmarks">
+						<datalist id="tickmarks">
+							<option value="120">
+							<option value="180">
+							<option value="240">
+							<option value="300">
+							<option value="360">
+							<option value="420">
+							<option value="520">
+							<option value="600">
+						</datalist>
+					</div> <!-- end slider wrapper -->
+					<div id="artist-select-div">
+					<label for="artist-select">Artist</label><br>
+						<select name="artist-select" id="artist-select">
+							<option value="" disabled selected>Select Artist</option>
+							<option value="Frank_Sinatra">Frank Sinatra</option>
+							<option value="The_Beatles">The Beatles</option>
+							<option value="Ella_Fitzgerald">Ella Fitzgerald</option>
+							<option value="Louis_Armstrong">Louis_Armstrong</option>
+							<option value="Artist_5">Artist 5</option>
+						</select>
+					</div>
+
+					<div id="album-select-div">
+						<label for="album-select">Album</label><br>
+						<select name="album-select" id="album-select">
+							<option value="" disabled selected>Select Album</option>
+							<option value="Album_1">Album 1</option>
+							<option value="Album_2">Album 2</option>
+							<option value="Album_3">Album 3</option>
+							<option value="Album_4">Album 4</option>
+							<option value="Album_5">Album 5</option>
+					</select>
+					</div>
+
+					<div id="genre-checkbox">
+						<input type="checkbox" name="rock" id="rock" value="rock" class="checkbox">Rock
+						<input type="checkbox" name="classical" id="classical" value="classical" class="checkbox">Classical<br>
+						<input type="checkbox" name="pop" id="pop" value="pop" class="checkbox">Pop
+						<input type="checkbox" name="jazz" id="jazz" value="jazz" class="checkbox">Jazz<br>
+						<input type="checkbox" name="blues" id="blues" value="blues" class="checkbox">Blues
+						<input type="checkbox" name="hiphop" id="hiphop" value="hiphop" class="checkbox">Hip-Hop
+					</div>
+					<div id="filter-button-div">
+						<button id="filter-button">Filter</button>	
+					</div>
+				</form>	
+			</aside> <!-- END SIDEBAR -->
+
+			<div id="song-list-div">
+				<section>
+					<h2>Song 1</h2>
+					<p>Artist Name | Album Name | Genre</p>
+				</section>
+				<section>
+					<h2>Song 2</h2>
+					<p>Artist Name | Album Name | Genre</p>
+				</section>
+				<section>
+					<h2>Song 3</h2>
+					<p>Artist Name | Album Name | Genre</p>
+				</section>
+				<section>
+					<h2>Song 4</h2>
+					<p>Artist Name | Album Name | Genre</p>
+				</section>
+			</div>
+		</div> <!--END container div -->
+	</body>
+</html>
