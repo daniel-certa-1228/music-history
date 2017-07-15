@@ -203,7 +203,7 @@ body {
 
 @media only screen and (max-width: 572px) {
     .container-div {
-        padding-top: 99px;
+        padding-top: 78px;
     }
 
     .header-h1 {
@@ -217,7 +217,7 @@ body {
 
 @media only screen and (max-width: 358px) {
     .container-div {
-        padding-top: 120px;
+        padding-top: 100px;
     }
 }
 
