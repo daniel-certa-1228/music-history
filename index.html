@@ -11,11 +11,11 @@
 
 	<body>
 
-		<header>
-			<h1>musicHistory</h1>
+		<header class="header">
+			<h1 class="header-h1">musicHistory</h1>
 			<nav>
-				<ul>
-					<li>View Music</li>
+				<ul class="nav-ul">
+					<li class="selected-page">View Music</li>
 					<li><a href="#">Add Music</a></li>
 					<li><a href="">Profile</a></li>
 				</ul>
@@ -24,7 +24,7 @@
 
 		<div class="container-div"> <!--container div -->
 			<aside id="control-panel"> <!-- SIDEBAR -->
-				<form>
+				<form class="control-panel-form">
 					<div id="slider-wrapper">
 						<label for="song-length-slider">Song-Length</label><br>
 						<!-- slider -->
@@ -65,12 +65,12 @@
 					</div>
 
 					<div id="genre-checkbox">
-						<input type="checkbox" name="rock" id="rock" value="rock" class="checkbox">Rock
-						<input type="checkbox" name="classical" id="classical" value="classical" class="checkbox">Classical<br>
-						<input type="checkbox" name="pop" id="pop" value="pop" class="checkbox">Pop
-						<input type="checkbox" name="jazz" id="jazz" value="jazz" class="checkbox">Jazz<br>
-						<input type="checkbox" name="blues" id="blues" value="blues" class="checkbox">Blues
-						<input type="checkbox" name="hiphop" id="hiphop" value="hiphop" class="checkbox">Hip-Hop
+						<div><input type="checkbox" name="rock" id="rock" value="rock" class="checkbox">Rock</div>
+						<div><input type="checkbox" name="classical" id="classical" value="classical" class="checkbox">Classical</div><!-- <br> -->
+						<div><input type="checkbox" name="pop" id="pop" value="pop" class="checkbox">Pop</div>
+						<div><input type="checkbox" name="jazz" id="jazz" value="jazz" class="checkbox">Jazz</div><!-- <br> -->
+						<div><input type="checkbox" name="blues" id="blues" value="blues" class="checkbox">Blues</div>
+						<div><input type="checkbox" name="hiphop" id="hiphop" value="hiphop" class="checkbox">Hip-Hop</div>
 					</div>
 					<div id="filter-button-div">
 						<button id="filter-button">Filter</button>	
