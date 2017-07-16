@@ -63,7 +63,6 @@ body {
 }
 
 .container-div {
-	/*display: inline-block;*/
 	max-width: 94%;
 	margin: 0 auto;
 	display: flex;
@@ -73,6 +72,10 @@ body {
 	padding-top: 75px;
 }
 
+/**************************
+  LEFT SIDE CONTROL PANEL
+**************************/
+
 #control-panel {
 	background-color: #f2f771;
 	margin-top: 1em;
@@ -81,7 +84,6 @@ body {
 	flex-basis: 38%;
 	border: 1px solid black;
 	min-width: 300px;
-	/*flex-grow: 5;*/
 
 }
 
@@ -134,41 +136,55 @@ body {
 	background-color: whitesmoke;
 }
 
+/**************************
+	SONG LIST SECTION
+**************************/
+
 #song-list-div {
 	flex-basis: 55%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	flex-shrink: 1;
-	align-items: center;
+	align-items: flex-start;
 	background-color: rgba(10, 175, 241, .2);
 	margin-top: 1em;
 	border-radius: 10px;
 	min-width: 300px;
-	padding-bottom: 1em;
+	padding: 1em;
+
 }
 
-#song-list-div section {
-	/*padding-left: 1em;*/
+.song-display-string {
+	margin: .7em 0;
+	font-weight: bold;
 }
 
-#song-list-div h2 {
+/*#song-list-div section {
+	
+}*/
+
+/*#song-list-div h2 {
 	margin: .5em 0;
 	font-size: 1.3em;
-}
+}*/
 
-.info-display-div {
+/*.info-display-div {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
-}
+}*/
 
-.info-display-div p {
+/*.info-display-div p {
 	flex-shrink: 0
 	flex-grow: 1;
 	margin: 0 1em 0 0;
-}
+}*/
+
+/**************************
+	FOOTER
+**************************/
 
 .footer-div {
 	background-color: #0444bf;
