@@ -54,6 +54,11 @@ body {
 	text-shadow: 0px 0px 2px #f2f771;
 }
 
+.nav-ul a:active {
+	color: #f00;
+	text-shadow: 0px 0px 2px #f00;
+}
+
 .selected-page {
 	color: rgba(245, 245, 245, .8)
 }
@@ -160,27 +165,25 @@ body {
 	font-weight: bold;
 }
 
-/*#song-list-div section {
-	
-}*/
+/**************************
+	ADD MUSIC
+**************************/
 
-/*#song-list-div h2 {
-	margin: .5em 0;
-	font-size: 1.3em;
-}*/
-
-/*.info-display-div {
+#add-music {
+	margin: 1em 0;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 100%;
-}*/
 
-/*.info-display-div p {
-	flex-shrink: 0
-	flex-grow: 1;
-	margin: 0 1em 0 0;
-}*/
+}
+
+#add-music section {
+	margin: .5em 0;
+	/*position: relative;*/
+}
+
+#add-music fieldset {
+	/*min-width: 300px*/
+}
+
 
 /**************************
 	FOOTER
@@ -198,6 +201,10 @@ body {
   	left: 0;
   	z-index: 999;
 
+}
+
+.hidden {
+	display: none;
 }
 
 /**************************

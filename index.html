@@ -15,9 +15,9 @@
 			<h1 class="header-h1">musicHistory</h1>
 			<nav>
 				<ul class="nav-ul">
-					<li class="selected-page">View Music</li>
+					<li><a href="#">List Music</a></li>
 					<li><a href="#">Add Music</a></li>
-					<li><a href="">Profile</a></li>
+					<li><a href="#">Profile</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -77,33 +77,29 @@
 					</div>
 				</form>	
 			</aside> <!-- END SIDEBAR -->
-
+			<!-- SONG LIST -->
 			<div id="song-list-div">
-				<!-- <section>
-					<h2>Song 1</h2>
-					<div class="info-display-div">
-						<p>Artist Name</p><p>|</p><p>Album Name</p><p>|</p><p>Genre</p>
-					</div>
-				</section>
-				<section>
-					<h2>Song 2</h2>
-					<div class="info-display-div">
-						<p>Artist Name</p><p>|</p><p>Album Name</p><p>|</p><p>Genre</p>
-					</div>
-				</section>
-				<section>
-					<h2>Song 3</h2>
-					<div class="info-display-div">
-						<p>Artist Name</p><p>|</p><p>Album Name</p><p>|</p><p>Genre</p>
-					</div>
-				</section>
-				<section>
-					<h2>Song 4</h2>
-					<div class="info-display-div">
-						<p>Artist Name</p><p>|</p><p>Album Name</p><p>|</p><p>Genre</p>
-					</div> -->
-				</section>
+
 			</div>
+			<!-- END SONG LIST -->
+			<div id="add-music">  <!-- ADD MUSIC -->
+				<fieldset>
+					<legend>Add Music</legend>
+					<section>
+						<label for="artistNameInput">Artist:</label><br>
+						<input type="text" id="artistNameInput">
+					</section>
+					<section>
+						<label for="songNameInput">Song Title:</label><br>
+						<input type="text" id="songNameInput">
+					</section>
+					<section>
+						<label for="albumNameInput">Album Title:</label><br>
+						<input type="text" id="albumNameInput">
+					</section>
+					<button id="add-song-btn">Add Song</button>
+				</fieldset>
+			</div>  <!-- END ADD MUSIC -->
 		</div> <!--END container div -->
 		<div class="footer-div">
 			<footer>
