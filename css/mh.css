@@ -54,6 +54,11 @@ body {
 	text-shadow: 0px 0px 2px #f2f771;
 }
 
+.nav-ul a:active {
+	color: #f00;
+	text-shadow: 0px 0px 2px #f00;
+}
+
 .selected-page {
 	color: rgba(245, 245, 245, .8)
 }
@@ -84,6 +89,7 @@ body {
 	flex-basis: 38%;
 	border: 1px solid black;
 	min-width: 300px;
+	max-height: 400px
 
 }
 
@@ -140,13 +146,19 @@ body {
 	SONG LIST SECTION
 **************************/
 
-#song-list-div {
+.song-list {
 	flex-basis: 55%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	flex-shrink: 1;
 	align-items: flex-start;
+	max-height: 400px;
+	overflow: scroll;
+}
+
+#song-list-div {
+
 	background-color: rgba(10, 175, 241, .2);
 	margin-top: 1em;
 	border-radius: 10px;
@@ -160,27 +172,27 @@ body {
 	font-weight: bold;
 }
 
-/*#song-list-div section {
-	
-}*/
+/**************************
+	ADD MUSIC
+**************************/
 
-/*#song-list-div h2 {
+#add-music {
+	margin: 1em auto;
+	/*display: flex;*/
+
+}
+
+#add-music section {
 	margin: .5em 0;
-	font-size: 1.3em;
-}*/
+	/*position: relative;*/
+}
 
-/*.info-display-div {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 100%;
-}*/
-
-/*.info-display-div p {
-	flex-shrink: 0
-	flex-grow: 1;
-	margin: 0 1em 0 0;
-}*/
+#add-music fieldset {
+	/*min-width: 300px*/
+}
+#add-music button {
+	margin: .5em auto 0;
+}
 
 /**************************
 	FOOTER
@@ -198,6 +210,14 @@ body {
   	left: 0;
   	z-index: 999;
 
+}
+
+/**************************
+	HIDE ELEMENTS
+**************************/
+
+.hidden {
+	display: none;
 }
 
 /**************************
