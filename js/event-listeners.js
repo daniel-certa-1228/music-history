@@ -40,27 +40,44 @@ listLink.addEventListener("click", (event) => {
 
 //SUBMIT MUSIC
 let addBtn = document.getElementById("add-song-btn");
+let artistNameField = document.getElementById("artistNameInput");
+// console.log( "artistNameField", artistNameField );
+let songTitleField = document.getElementById("songNameInput");
+let albumTitleField= document.getElementById("albumNameInput");
 
 addBtn.addEventListener("click", (event) => {
-	// let songContainer = document.getElementById('song-list-div');
-	// songContainer.innerHTML = "";
-	
 
-	let artistName = document.getElementById("artistNameInput").value;
+	let artistName = artistNameField.value;
 	// console.log( "artistName", artistName );
-	let songTitle = document.getElementById("songNameInput").value;
+	let songTitle = songTitleField.value;
 	// console.log( "songTitle", songTitle );
-	let albumTitle = document.getElementById("albumNameInput").value
+	let albumTitle = albumTitleField.value
 	// console.log( "albumTitle", albumTitle );
 	songs.push(`${songTitle} > by ${artistName} on the album ${albumTitle}`)
-	console.log( "songs", songs );
+	// console.log( "songs", songs );
 	correctSongs();
-	console.log( "correctedSongs", correctedSongs );
+	// console.log( "correctedSongs", correctedSongs );
 	outputSongs();
 	listView();
+	artistNameField.value = "";
+	songTitleField.value = "";
+	albumTitleField.value= "";
 
 
 });
+
+
+function addMusicReturnButton(element) {
+	element.addEventListener("keypress", function(event) {
+    if (event.keyCode == 13) {
+        addBtn.click();
+    	}
+	});
+}
+
+addMusicReturnButton(artistNameField);
+addMusicReturnButton(songTitleField);
+addMusicReturnButton(albumTitleField);
 
 
 

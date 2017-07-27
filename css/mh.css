@@ -89,6 +89,7 @@ body {
 	flex-basis: 38%;
 	border: 1px solid black;
 	min-width: 300px;
+	max-height: 400px
 
 }
 
@@ -152,6 +153,8 @@ body {
 	justify-content: space-between;
 	flex-shrink: 1;
 	align-items: flex-start;
+	max-height: 400px;
+	overflow: scroll;
 }
 
 #song-list-div {
