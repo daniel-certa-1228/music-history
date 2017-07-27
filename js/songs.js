@@ -24,24 +24,36 @@ songs.push("Mack The Knife > by Ella Fitzgerald on the album Ella In Berlin")
 
 // console.log( "songs", songs );
 
-for (let i = 0; i < songs.length; i++) {
-	let newTitle = songs[i];
-	newTitle = newTitle.replace(/>/gi, "-");
-	newTitle = newTitle.replace(/@/gi, "");
-	newTitle = newTitle.replace(/\*/gi, "");
-	newTitle = newTitle.replace(/\(/gi, "");
-	newTitle = newTitle.replace(/\!/gi, "");
-	// console.log( "newTitle", newTitle );
-	correctedSongs.push(newTitle)
+function correctSongs() {
+		correctedSongs.length = 0;
+		for (let i = 0; i < songs.length; i++) {
+		let newTitle = songs[i];
+		newTitle = newTitle.replace(/>/gi, "-");
+		newTitle = newTitle.replace(/@/gi, "");
+		newTitle = newTitle.replace(/\*/gi, "");
+		newTitle = newTitle.replace(/\(/gi, "");
+		newTitle = newTitle.replace(/\!/gi, "");
+		// console.log( "newTitle", newTitle );
+		correctedSongs.push(newTitle)
+	}
+
 }
+
+correctSongs();
 
 // console.log( "correctedSongs", correctedSongs );
-
-for (let j = 0; j < correctedSongs.length; j++) {
-	let songList = `<p class="song-display-string">${correctedSongs[j]}</p>`
+function outputSongs() {
 	let songContainer = document.getElementById('song-list-div');
-	songContainer.innerHTML += songList;
+	songContainer.innerHTML="";
+
+	for (let j = 0; j < correctedSongs.length; j++) {
+		let songList = `<p class="song-display-string">${correctedSongs[j]}</p>`
+		songContainer.innerHTML += songList;
+	}
+
 }
+
+outputSongs();
 
 
 

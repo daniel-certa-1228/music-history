@@ -145,13 +145,17 @@ body {
 	SONG LIST SECTION
 **************************/
 
-#song-list-div {
+.song-list {
 	flex-basis: 55%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	flex-shrink: 1;
 	align-items: flex-start;
+}
+
+#song-list-div {
+
 	background-color: rgba(10, 175, 241, .2);
 	margin-top: 1em;
 	border-radius: 10px;
@@ -183,7 +187,9 @@ body {
 #add-music fieldset {
 	/*min-width: 300px*/
 }
-
+#add-music button {
+	margin: .5em auto 0;
+}
 
 /**************************
 	FOOTER
@@ -202,6 +208,10 @@ body {
   	z-index: 999;
 
 }
+
+/**************************
+	HIDE ELEMENTS
+**************************/
 
 .hidden {
 	display: none;

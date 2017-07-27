@@ -7,6 +7,7 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <title>Music History</title>
 	  <link rel="stylesheet" type="text/css" href="css/mh.css">
+	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
 
 	<body>
@@ -15,9 +16,9 @@
 			<h1 class="header-h1">musicHistory</h1>
 			<nav>
 				<ul class="nav-ul">
-					<li><a href="#">List Music</a></li>
-					<li><a href="#">Add Music</a></li>
-					<li><a href="#">Profile</a></li>
+					<li><a href="#" id="listViewLink">List Music</a></li>
+					<li><a href="#" id="addViewLink">Add Music</a></li>
+					<li><a href="#" id="profileViewLink">Profile</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -78,11 +79,11 @@
 				</form>	
 			</aside> <!-- END SIDEBAR -->
 			<!-- SONG LIST -->
-			<div id="song-list-div">
+			<div id="song-list-div" class="song-list">
 
 			</div>
 			<!-- END SONG LIST -->
-			<div id="add-music">  <!-- ADD MUSIC -->
+			<div id="add-music" class="hidden">  <!-- ADD MUSIC -->
 				<fieldset>
 					<legend>Add Music</legend>
 					<section>
