@@ -43,53 +43,57 @@ listLink.addEventListener("click", (event) => {
 
 //SUBMIT MUSIC
 
+{
 
-let addBtn = document.getElementById("add-song-btn");
-let artistNameField = document.getElementById("artistNameInput");
-// console.log( "artistNameField", artistNameField );
-let songTitleField = document.getElementById("songNameInput");
-let albumTitleField= document.getElementById("albumNameInput");
+	let addBtn = document.getElementById("add-song-btn");
+	let artistNameField = document.getElementById("artistNameInput");
+	// console.log( "artistNameField", artistNameField );
+	let songTitleField = document.getElementById("songNameInput");
+	let albumTitleField= document.getElementById("albumNameInput");
 
-addBtn.addEventListener("click", (event) => {
+	addBtn.addEventListener("click", (event) => {
 
-	let artistName = artistNameField.value;
-	// console.log( "artistName", artistName );
-	let songTitle = songTitleField.value;
-	// console.log( "songTitle", songTitle );
-	let albumTitle = albumTitleField.value
-	// console.log( "albumTitle", albumTitle );
-	let genre = genreSelectAdd.value
+		let artistName = artistNameField.value;
+		// console.log( "artistName", artistName );
+		let songTitle = songTitleField.value;
+		// console.log( "songTitle", songTitle );
+		let albumTitle = albumTitleField.value
+		// console.log( "albumTitle", albumTitle );
+		let genre = genreSelectAdd.value
 
-	if (artistName==="" ||  songTitle==="" || albumTitle==="") {
+		if (artistName==="" ||  songTitle==="" || albumTitle==="") {
 
-		alert("Please fill in all fields!")
+			alert("Please fill in all fields!")
 
-	}  else  {
+		}  else  {
 
-	let addSongObject = {
-					"song": songTitle,
-					"artist": artistName,
-					"album": albumTitle,
-					"genre": genre
-				}
+		let addSongObject = {
+						"song": songTitle,
+						"artist": artistName,
+						"album": albumTitle,
+						"genre": genre
+					}
 
-		// songObject.push(addSongObject);
-		// console.log( "songObject", songObject );
+		SongSpace.passNewSong(addSongObject);
 
-		console.log(addSongObject)
-		// console.log( "songs", songs );
-		// correctSongs();
-		// console.log( "correctedSongs", correctedSongs );
-		// outputSongs();
-		SongSpace.listView();
-		artistNameField.value = "";
-		songTitleField.value = "";
-		albumTitleField.value= "";
-		genreSelectAdd.value = "";
+			// songObject.push(addSongObject);
+			// console.log( "songObject", songObject );
 
-	}
+			console.log(addSongObject)
+			// console.log( "songs", songs );
+			// correctSongs();
+			// console.log( "correctedSongs", correctedSongs );
+			// outputSongs();
+			SongSpace.listView();
+			artistNameField.value = "";
+			songTitleField.value = "";
+			albumTitleField.value= "";
+			genreSelectAdd.value = "";
+			
 
-});
+		}
+
+	});
 
 
 function addMusicReturnButton(element) {
@@ -103,6 +107,10 @@ function addMusicReturnButton(element) {
 addMusicReturnButton(artistNameField);
 addMusicReturnButton(songTitleField);
 addMusicReturnButton(albumTitleField);
+
+}
+
+
 
 
 

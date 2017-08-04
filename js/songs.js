@@ -17,7 +17,7 @@ console.log( "songs.js");
 			console.log( "songload complete" );
 			songObject = JSON.parse(event.target.responseText);
 			// console.log( "songObject", songObject );
-			SongSpace.outputSongs(songObject);
+			SongSpace.passJSON1(songObject);
 		}
 
 		songloader.open("GET", "../json/music.json");
@@ -30,29 +30,49 @@ console.log( "songs.js");
 
 {
 
-	SongSpace.outputSongs = (songObject) => {
+	let songArray = []
+	console.log( "songArray", songArray );
+
+	SongSpace.passNewSong = (addSongObject) => {
+
+		console.log( "addSongObject", addSongObject );
+		songArray.push(addSongObject);
+		console.log( "songArray", songArray );
+		SongSpace.outputSongs(songArray);
+	}
+
+	SongSpace.passJSON1 = (songObject) => {
+
+		for (let i = 0; i < songObject.length; i++) {
+			songArray.push(songObject[i])
+		};
+		
+
+		SongSpace.outputSongs(songArray);
+	}
+
+		SongSpace.outputSongs = (songArray) => {
 
 		let songContainer = document.getElementById('song-list-div');
 		songContainer.innerHTML="";
 
-		console.log( "songObject", songObject );
-		// console.log( "songs", songs );
 
-		for (let i = 0; i < songObject.length; i++) {
-
-			// console.log( "songObject[i]", songObject[i] );
-
+		for (let i = 0; i < songArray.length; i++) {
+			// let songs = songArray;
 			
 			let songList =	`<section id="song--${i}">
 							<p class="song-display-string">
-							${songObject[i].song} by ${songObject[i].artist} from the album ${songObject[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
+							${songArray[i].song} by ${songArray[i].artist} from the album ${songArray[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
 							</section>`
-
-			// songContainer.innerHTML += songList;
+			// console.log( "test" );
 			$(songContainer).prepend(songList);
 		}
 	}
+
+	SongSpace.outputSongs(songArray);
 }
+
+
 
 
 	// outputSongs();
