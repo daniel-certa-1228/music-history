@@ -1,0 +1,51 @@
+[
+	{	
+		"song": "Sing, Sing, Sing",
+		"artist": "Benny Goodman",
+		"album": "The Essential Benny Goodman",
+		"genre": "Jazz"
+	},
+
+	{	
+		"song": "I Have Dreamed",
+		"artist": "Frank Sinatra",
+		"album": "The Concert Sinatra",
+		"genre": "Jazz"
+	},
+
+	{	
+		"song": "Special Delivery Stomp",
+		"artist": "Artie Shaw",
+		"album": "The Essential Artie Shaw",
+		"genre": "Jazz"
+	},
+
+	{	
+		"song": "St. Louis Blues",
+		"artist": "Louis Armstrong",
+		"album": "Louis Armstrong Plays W.C. Handy",
+		"genre": "Jazz"
+	},
+
+	{	
+		"song": "Cheek To Cheek",
+		"artist": "Fred Astaire",
+		"album": "The Early Years At RKO",
+		"genre": "Pop"
+	},
+
+	{	
+		"song": "Padam Padam",
+		"artist": "Edith Piaf",
+		"album": "The Best of Edith Piaf",
+		"genre": "Pop"
+	},
+
+	{	
+		"song": "Stardust",
+		"artist": "Bing Crosby",
+		"album": "The Definitive Collection: Bing Crosby",
+		"genre": "Pop"
+	}
+
+]

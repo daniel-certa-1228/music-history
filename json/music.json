@@ -1,0 +1,51 @@
+[
+	{	
+		"song": "Mack The Knife",
+		"artist": "Ella Fitzgerald",
+		"album": "Ella In Berlin",
+		"genre": "Jazz"
+	},
+
+	{	
+		"song": "The Song Is You",
+		"artist": "Frank Sinatra",
+		"album": "Trilogy",
+		"genre": "Jazz"
+	},
+
+	{	
+		"song": "Ironic",
+		"artist": "Alanis Morisette",
+		"album": "Jagged Little Pill",
+		"genre": "Alternative"
+	},
+
+	{	
+		"song": "Welcome to the Jungle",
+		"artist": "Guns & Roses",
+		"album": "Appetite for Destruction",
+		"genre": "Rock"
+	},
+
+	{	
+		"song": "Another Brick in the Wall",
+		"artist": "Pink Floyd",
+		"album": "The Wall",
+		"genre": "Rock"
+	},
+
+	{	
+		"song": "The Logical Song",
+		"artist": "Supertramp",
+		"album": "Breakfast in America",
+		"genre": "Rock"
+	},
+
+	{	
+		"song": "Legs",
+		"artist": "ZZ Top",
+		"album": "Eliminator",
+		"genre": "Rock"
+	}
+
+]
