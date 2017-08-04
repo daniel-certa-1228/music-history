@@ -1,9 +1,9 @@
 console.log( "songs.js");
-
+//Define ES6 IIFE
 {
 	var SongSpace = {};
 }
-
+//IIFE that contains initial song-loader function
 {
 
 	SongSpace.loadSongInfo = () => {
@@ -26,6 +26,14 @@ console.log( "songs.js");
 	};
 
 	SongSpace.loadSongInfo();
+}
+//IIFE that contains the second song-loader function
+{
+	SongSpace.loadMoreSongs = () => {
+
+
+	}
+
 }
 
 {
@@ -64,8 +72,11 @@ console.log( "songs.js");
 							<p class="song-display-string">
 							${songArray[i].song} by ${songArray[i].artist} from the album ${songArray[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
 							</section>`
-			$(songContainer).prepend(songList);
+			$(songContainer).append(songList);
 		}
+
+		let moreBtn = `<section id="more-btn-section"><button type="button" class="more-song-btn" id="more-song-btn">LOAD MOAR SONGS</button></section>`
+		$(songContainer).append(moreBtn);
 	}
 
 	SongSpace.outputSongs(songArray);
