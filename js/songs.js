@@ -48,7 +48,8 @@ function outputSongs() {
 
 	for (let j = 0; j < correctedSongs.length; j++) {
 		let songList = `<p class="song-display-string">${correctedSongs[j]}</p>`
-		songContainer.innerHTML += songList;
+		// songContainer.innerHTML += songList;
+		$(songContainer).prepend(songList);
 	}
 
 }
