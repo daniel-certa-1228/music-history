@@ -172,6 +172,17 @@ body {
 	font-weight: bold;
 }
 
+.delete-song-btn {
+	margin-left: 2em;
+	background-color: red;
+	color: white;
+	font-size: .5em;
+	/*padding: 0;*/
+/*	width: 1.5em;
+	height: 1.5em;*/
+	/*text-align: center;*/
+}
+
 /**************************
 	ADD MUSIC
 **************************/

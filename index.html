@@ -11,107 +11,120 @@
 	</head>
 
 	<body>
+	<div id="container">
+			<header class="header">
+				<h1 class="header-h1">musicHistory</h1>
+				<nav>
+					<ul class="nav-ul">
+						<li><a href="#" id="listViewLink">List Music</a></li>
+						<li><a href="#" id="addViewLink">Add Music</a></li>
+						<li><a href="#" id="profileViewLink">Profile</a></li>
+					</ul>
+				</nav>
+			</header>
 
-		<header class="header">
-			<h1 class="header-h1">musicHistory</h1>
-			<nav>
-				<ul class="nav-ul">
-					<li><a href="#" id="listViewLink">List Music</a></li>
-					<li><a href="#" id="addViewLink">Add Music</a></li>
-					<li><a href="#" id="profileViewLink">Profile</a></li>
-				</ul>
-			</nav>
-		</header>
+			<div class="container-div"> <!--container div -->
+				<aside id="control-panel"> <!-- SIDEBAR -->
+					<form class="control-panel-form">
+						<div id="slider-wrapper">
+							<label for="song-length-slider">Song-Length</label><br>
+							<!-- slider -->
+							<input id="song-length-slider" type="range" min="120" max="600" value="240" list="tickmarks">
+							<datalist id="tickmarks">
+								<option value="120">
+								<option value="180">
+								<option value="240">
+								<option value="300">
+								<option value="360">
+								<option value="420">
+								<option value="520">
+								<option value="600">
+							</datalist>
+						</div> <!-- end slider wrapper -->
+						<div id="artist-select-div">
+						<label for="artist-select">Artist</label><br>
+							<select name="artist-select" id="artist-select">
+								<option value="" disabled selected>Select Artist</option>
+								<option value="Frank_Sinatra">Frank Sinatra</option>
+								<option value="The_Beatles">The Beatles</option>
+								<option value="Ella_Fitzgerald">Ella Fitzgerald</option>
+								<option value="Louis_Armstrong">Louis_Armstrong</option>
+								<option value="Artist_5">Artist 5</option>
+							</select>
+						</div>
 
-		<div class="container-div"> <!--container div -->
-			<aside id="control-panel"> <!-- SIDEBAR -->
-				<form class="control-panel-form">
-					<div id="slider-wrapper">
-						<label for="song-length-slider">Song-Length</label><br>
-						<!-- slider -->
-						<input id="song-length-slider" type="range" min="120" max="600" value="240" list="tickmarks">
-						<datalist id="tickmarks">
-							<option value="120">
-							<option value="180">
-							<option value="240">
-							<option value="300">
-							<option value="360">
-							<option value="420">
-							<option value="520">
-							<option value="600">
-						</datalist>
-					</div> <!-- end slider wrapper -->
-					<div id="artist-select-div">
-					<label for="artist-select">Artist</label><br>
-						<select name="artist-select" id="artist-select">
-							<option value="" disabled selected>Select Artist</option>
-							<option value="Frank_Sinatra">Frank Sinatra</option>
-							<option value="The_Beatles">The Beatles</option>
-							<option value="Ella_Fitzgerald">Ella Fitzgerald</option>
-							<option value="Louis_Armstrong">Louis_Armstrong</option>
-							<option value="Artist_5">Artist 5</option>
+						<div id="album-select-div">
+							<label for="album-select">Album</label><br>
+							<select name="album-select" id="album-select">
+								<option value="" disabled selected>Select Album</option>
+								<option value="Album_1">Album 1</option>
+								<option value="Album_2">Album 2</option>
+								<option value="Album_3">Album 3</option>
+								<option value="Album_4">Album 4</option>
+								<option value="Album_5">Album 5</option>
 						</select>
-					</div>
+						</div>
 
-					<div id="album-select-div">
-						<label for="album-select">Album</label><br>
-						<select name="album-select" id="album-select">
-							<option value="" disabled selected>Select Album</option>
-							<option value="Album_1">Album 1</option>
-							<option value="Album_2">Album 2</option>
-							<option value="Album_3">Album 3</option>
-							<option value="Album_4">Album 4</option>
-							<option value="Album_5">Album 5</option>
-					</select>
-					</div>
+						<div id="genre-checkbox">
+							<div><input type="checkbox" name="rock" id="rock" value="rock" class="checkbox">Rock</div>
+							<div><input type="checkbox" name="classical" id="classical" value="classical" class="checkbox">Classical</div><!-- <br> -->
+							<div><input type="checkbox" name="pop" id="pop" value="pop" class="checkbox">Pop</div>
+							<div><input type="checkbox" name="jazz" id="jazz" value="jazz" class="checkbox">Jazz</div><!-- <br> -->
+							<div><input type="checkbox" name="alternative" id="alternative" value="alternative" class="checkbox">Alternative</div>
+							<div><input type="checkbox" name="hiphop" id="hiphop" value="hiphop" class="checkbox">Hip-Hop</div>
+						</div>
+						<div id="filter-button-div">
+							<button id="filter-button">Filter</button>	
+						</div>
+					</form>	
+				</aside> <!-- END SIDEBAR -->
+				<!-- SONG LIST -->
+				<div id="song-list-div" class="song-list">
 
-					<div id="genre-checkbox">
-						<div><input type="checkbox" name="rock" id="rock" value="rock" class="checkbox">Rock</div>
-						<div><input type="checkbox" name="classical" id="classical" value="classical" class="checkbox">Classical</div><!-- <br> -->
-						<div><input type="checkbox" name="pop" id="pop" value="pop" class="checkbox">Pop</div>
-						<div><input type="checkbox" name="jazz" id="jazz" value="jazz" class="checkbox">Jazz</div><!-- <br> -->
-						<div><input type="checkbox" name="blues" id="blues" value="blues" class="checkbox">Blues</div>
-						<div><input type="checkbox" name="hiphop" id="hiphop" value="hiphop" class="checkbox">Hip-Hop</div>
-					</div>
-					<div id="filter-button-div">
-						<button id="filter-button">Filter</button>	
-					</div>
-				</form>	
-			</aside> <!-- END SIDEBAR -->
-			<!-- SONG LIST -->
-			<div id="song-list-div" class="song-list">
-
+				</div>
+				<!-- END SONG LIST -->
+				<div id="add-music" class="hidden">  <!-- ADD MUSIC -->
+					<fieldset>
+						<legend>Add Music</legend>
+						<section>
+							<label for="artistNameInput">Artist:</label><br>
+							<input type="text" id="artistNameInput">
+						</section>
+						<section>
+							<label for="songNameInput">Song Title:</label><br>
+							<input type="text" id="songNameInput">
+						</section>
+						<section>
+							<label for="albumNameInput">Album Title:</label><br>
+							<input type="text" id="albumNameInput">
+						</section>
+						<section class="select">
+							<select id="genreSelectAdd">
+								<option value="" disabled selected>-Select Genre-</option>
+								<option value="rock">Rock</option>
+								<option value="classical">Classical</option>
+								<option value="pop">Pop</option>
+								<option value="jazz">Jazz</option>
+								<option value="alternative">Alternative</option>
+								<option value="hiphop">Hip-Hop</option>
+							</select>
+						</section>
+						<button id="add-song-btn">Add Song</button>
+					</fieldset>
+				</div>  <!-- END ADD MUSIC -->
+			</div> <!--END container div -->
+			<div class="footer-div">
+				<footer>
+					&copy;2017 musicHistory
+				</footer>
 			</div>
-			<!-- END SONG LIST -->
-			<div id="add-music" class="hidden">  <!-- ADD MUSIC -->
-				<fieldset>
-					<legend>Add Music</legend>
-					<section>
-						<label for="artistNameInput">Artist:</label><br>
-						<input type="text" id="artistNameInput">
-					</section>
-					<section>
-						<label for="songNameInput">Song Title:</label><br>
-						<input type="text" id="songNameInput">
-					</section>
-					<section>
-						<label for="albumNameInput">Album Title:</label><br>
-						<input type="text" id="albumNameInput">
-					</section>
-					<button id="add-song-btn">Add Song</button>
-				</fieldset>
-			</div>  <!-- END ADD MUSIC -->
-		</div> <!--END container div -->
-		<div class="footer-div">
-			<footer>
-				&copy;2017 musicHistory
-			</footer>
-		</div>
+	</div> <!-- end of container -->
 	<script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>	
 	<script type="text/javascript" src="js/songs.js"></script>
-	<script type="text/javascript" src="js/event-listeners.js"></script>	
+	<script type="text/javascript" src="js/event-listeners.js"></script>
+	<script type="text/javascript" src="js/song-delete.js"></script>	
 	</body>
 </html>
