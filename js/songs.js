@@ -31,13 +31,13 @@ console.log( "songs.js");
 {
 
 	let songArray = []
-	console.log( "songArray", songArray );
+	// console.log( "songArray", songArray );
 
 	SongSpace.passNewSong = (addSongObject) => {
 
-		console.log( "addSongObject", addSongObject );
+		// console.log( "addSongObject", addSongObject );
 		songArray.push(addSongObject);
-		console.log( "songArray", songArray );
+		// console.log( "songArray", songArray );
 		SongSpace.outputSongs(songArray);
 	}
 
@@ -64,7 +64,6 @@ console.log( "songs.js");
 							<p class="song-display-string">
 							${songArray[i].song} by ${songArray[i].artist} from the album ${songArray[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
 							</section>`
-			// console.log( "test" );
 			$(songContainer).prepend(songList);
 		}
 	}
@@ -72,19 +71,8 @@ console.log( "songs.js");
 	SongSpace.outputSongs(songArray);
 }
 
-
-
-
-	// outputSongs();
-
-
-
-
-
-
-
-
-
+//CODE GRAVEYARD//
+///////////////////////////////////////////////////////////////////////////
 // //provided code
 // let songs = [];
 // let correctedSongs = [];

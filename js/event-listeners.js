@@ -7,9 +7,6 @@ let songDiv = document.getElementById("song-list-div");
 let listLink = document.getElementById("listViewLink");
 let addLink = document.getElementById("addViewLink");
 let profileLink = document.getElementById("profileViewLink");
-// console.log( "addMusic", addMusic );
-// console.log( "ontrolPanel", controlPanel );
-// console.log( "songDiv", songDiv );
 {
 	SongSpace.listView = () => {
 
@@ -76,20 +73,12 @@ listLink.addEventListener("click", (event) => {
 
 		SongSpace.passNewSong(addSongObject);
 
-			// songObject.push(addSongObject);
-			// console.log( "songObject", songObject );
-
-			console.log(addSongObject)
-			// console.log( "songs", songs );
-			// correctSongs();
-			// console.log( "correctedSongs", correctedSongs );
-			// outputSongs();
 			SongSpace.listView();
 			artistNameField.value = "";
 			songTitleField.value = "";
 			albumTitleField.value= "";
 			genreSelectAdd.value = "";
-			
+
 
 		}
 
