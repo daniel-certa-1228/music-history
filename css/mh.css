@@ -183,6 +183,27 @@ body {
 	/*text-align: center;*/
 }
 
+.delete-song-btn:hover {
+	background-color: white;
+	color: red;
+}
+
+/*#more-btn-section {
+
+}*/
+
+.more-song-btn {
+	/*display: inline-block;*/
+	height: 2em;
+	font-weight: bold;
+	background-color: lightgrey;
+	margin: 0 auto;
+}
+
+.more-song-btn:hover {
+	background-color: white;
+}
+
 /**************************
 	ADD MUSIC
 **************************/
