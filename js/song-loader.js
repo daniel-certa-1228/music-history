@@ -1,12 +1,10 @@
 console.log( "songs.js");
 //Define ES6 IIFE
 
-{
-	var SongSpace = {};
-}
-
 $(document).ready(function(){
-//IIFE that contains initial song-loader function
+
+
+	//IIFE that contains initial song-loader function
 	{
 
 		SongSpace.loadSongInfo = () => {
@@ -21,11 +19,8 @@ $(document).ready(function(){
 			  })
 
 			function songLoadComplete(json) {
-				// console.log( json );
 				songObject = json;
 				SongSpace.passJSON1(songObject);
-				let songNumber = songObject.length;
-				SongSpace.passDefaultValue(songNumber)
 			}
 		};
 
@@ -35,6 +30,8 @@ $(document).ready(function(){
 	{
 		SongSpace.loadMoreSongs = () => {
 
+			let moreSongsObject = {};
+
 			$.ajax({
 				url:"../json/music-2.json"
 			}).done(moreSongsComplete)
@@ -43,12 +40,13 @@ $(document).ready(function(){
 			  })
 
 			function moreSongsComplete(json) {
+				let loaded = true;
+				SongSpace.passLoadedBoolean(loaded)
 				console.log( "More songs loaded.");
 				moreSongsObject = json;
 				SongSpace.passJSON2(moreSongsObject);
 
 			}
-
 
 		}
 

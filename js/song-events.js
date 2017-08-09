@@ -1,159 +1,143 @@
 console.log( "song-delete.js" );
 
-// Adds delete functionality to song-list
 {
-	let songContainer = document.getElementById("song-list-div");
-
-	$("#song-list-div").click(function() {
-		let clickTarget = event.target;
-		let songSelect = $(clickTarget).closest("div");
-
-		if (clickTarget.className === "delete-song-btn") {
-			$(songSelect).remove();
-		}
-		//RUNS THE ADD MORE SONGS FUNCTION
-		if (clickTarget.className === "more-song-btn") {
-			SongSpace.loadMoreSongs();
-		}
-
-	})
+	var SongSpace = {};
 }
 
-/////////////////////////////////////////////////////////////
-{
+$(document).ready(function(){
 
-	let songArray = []
-	let defaultNum = [];
-	console.log( "defaultNum", defaultNum );
+	// Adds delete functionality to song-list
+	{
+		let songContainer = document.getElementById("song-list-div");
 
-		SongSpace.passNewSong = (addSongObject) => {
+		$("#song-list-div").click(function() {
+			let clickTarget = event.target;
+			let songSelect = $(clickTarget).closest("div");
 
-			// console.log( "addSongObject", addSongObject );
-			songArray.push(addSongObject);
-			// console.log( "songArray", songArray );
-			SongSpace.outputSongs(songArray);
-		}
+			if (clickTarget.className === "delete-song-btn") {
+				$(songSelect).remove();
+			}
+			//RUNS THE ADD MORE SONGS FUNCTION
+			if (clickTarget.className === "more-song-btn") {
+				SongSpace.loadMoreSongs();
+			}
 
-		SongSpace.passJSON1 = (songObject) => {
-
-			for (let i = 0; i < songObject.length; i++) {
-				songArray.push(songObject[i])
-			};
-			
-			SongSpace.outputSongs(songArray);
-		}
-
-		SongSpace.passJSON2 = (songObject) => {
-
-			for (let i = 0; i < songObject.length; i++) {
-				songArray.push(songObject[i])
-			};
-			
-
-			SongSpace.outputSongs(songArray);
-		}
-
-		SongSpace.passDefaultValue = (number) => {
-			defaultNum.push(number);
-		}
-
-
-		SongSpace.outputSongs = (songArray) => {
-
-		let songContainer = $('#song-list-div');
-
-		$(songContainer).empty();
-
-		for (let i = 0; i < songArray.length; i++) {
-
-			let songList =	`<div id="song--${i}">
-							<p class="song-display-string">
-							${songArray[i].song} by ${songArray[i].artist} from the album ${songArray[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
-							</div>`
-			$(songContainer).append(songList);
-		}
-
-		let moreBtn = `<div id="more-btn-section"><button type="button" class="more-song-btn" id="more-song-btn"`
-
-		if (songArray.length > defaultNum[0]) {
-			moreBtn += `disabled`
-		}
-
-			moreBtn += `>LOAD MOAR SONGS</button></divn>`
-
-		$(songContainer).append(moreBtn);
-		
+		})
 	}
+/////////////////////////////////////////////////////////////
+	{
 
-	SongSpace.outputSongs(songArray);
+		let songArray = []
+		let loadedBoolean = false;
+		// console.log( "loadedBoolean", loadedBoolean );
 
-}
+			SongSpace.passNewSong = (addSongObject) => {
+
+				songArray.push(addSongObject);
+				SongSpace.outputSongs(songArray);
+			}
+
+			SongSpace.passJSON1 = (songObject) => {
+
+				for (let i = 0; i < songObject.length; i++) {
+					songArray.push(songObject[i])
+				};
+				
+				SongSpace.outputSongs(songArray);
+			}
+
+			SongSpace.passJSON2 = (songObject) => {
+
+				for (let i = 0; i < songObject.length; i++) {
+					songArray.push(songObject[i])
+				};
+				
+				SongSpace.outputSongs(songArray);
+			}
+
+			SongSpace.passLoadedBoolean = (value) => {
+				loadedBoolean = value;
+			}
+
+
+			SongSpace.outputSongs = (songArray) => {
+
+			let songContainer = $('#song-list-div');
+
+			$(songContainer).empty();
+
+			for (let i = 0; i < songArray.length; i++) {
+
+				let songList =	`<div id="song--${i}">
+								<p class="song-display-string">
+								${songArray[i].song} by ${songArray[i].artist} from the album ${songArray[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
+								</div>`
+				$(songContainer).append(songList);
+			}
+
+			let moreBtn = `<div id="more-btn-section"><button type="button" class="more-song-btn" id="more-song-btn"`
+
+			if (loadedBoolean) {
+				moreBtn += `disabled`
+			}
+
+				moreBtn += `>LOAD MOAR SONGS</button></divn>`
+
+			$(songContainer).append(moreBtn);
+			console.log( "loadedBoolean", loadedBoolean );
+			
+		}
+
+	}
 
 /////////////////////////////////////////////////
 
-//SUBMIT MUSIC
+	//SUBMIT MUSIC
 
-{
+	{
 
-	let addBtn = document.getElementById("add-song-btn");
-	let artistNameField = document.getElementById("artistNameInput");
-	// console.log( "artistNameField", artistNameField );
-	let songTitleField = document.getElementById("songNameInput");
-	let albumTitleField= document.getElementById("albumNameInput");
+		$("#add-song-btn").click(function(){
+			let artistName = $("#artistNameInput").val();
+			let songTitle = $("#songNameInput").val()
+			let albumTitle = $("#albumNameInput").val();
+			let genre = $("#genreSelectAdd").val();
 
-	addBtn.addEventListener("click", (event) => {
+			console.log( artistName, songTitle, albumTitle, genre);
 
-		let artistName = artistNameField.value;
-		// console.log( "artistName", artistName );
-		let songTitle = songTitleField.value;
-		// console.log( "songTitle", songTitle );
-		let albumTitle = albumTitleField.value
-		// console.log( "albumTitle", albumTitle );
-		let genre = genreSelectAdd.value
+			if (artistName==="" ||  songTitle==="" || albumTitle==="") {
 
-		if (artistName==="" ||  songTitle==="" || albumTitle==="") {
+				alert("Please fill in all fields!")
 
-			alert("Please fill in all fields!")
+			}  else  {
 
-		}  else  {
+			let addSongObject = {
+							"song": songTitle,
+							"artist": artistName,
+							"album": albumTitle,
+							"genre": genre
+						}
 
-		let addSongObject = {
-						"song": songTitle,
-						"artist": artistName,
-						"album": albumTitle,
-						"genre": genre
-					}
+			SongSpace.passNewSong(addSongObject);
 
-		SongSpace.passNewSong(addSongObject);
+				SongSpace.listView();
+				$("#artistNameInput").val("");
+				$("#songNameInput").val("")
+				$("#albumNameInput").val("");
+				$("#genreSelectAdd").val("");
+			}
 
-			SongSpace.listView();
-			artistNameField.value = "";
-			songTitleField.value = "";
-			albumTitleField.value= "";
-			genreSelectAdd.value = "";
+		})
+		
+		$("#add-music").keyup(function(){
 
+			if (event.keyCode == 13) {
+					$("#add-song-btn").click();
+		    	}
+		})
 
-		}
-
-	});
-
-
-	function addMusicReturnButton(element) {
-		element.addEventListener("keypress", function(event) {
-	    if (event.keyCode == 13) {
-	        addBtn.click();
-	    	}
-		});
 	}
 
-	addMusicReturnButton(artistNameField);
-	addMusicReturnButton(songTitleField);
-	addMusicReturnButton(albumTitleField);
-	addMusicReturnButton(genreSelectAdd);
-
-}
-
-
+})//END DOCUMENT READY
 /////////////////////////////////////////////////
 
 
