@@ -2,7 +2,7 @@ console.log( "event-listeners.js" );
 
 $(document).ready(function() {
 //This handles the different views////////////////////////
-	let profileLink = document.getElementById("profileViewLink");
+	// let profileLink = document.getElementById("profileViewLink");
 	{
 		SongSpace.listView = () => {
 

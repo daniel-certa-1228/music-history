@@ -6,8 +6,6 @@ console.log( "songs.js");
 }
 
 $(document).ready(function(){
-	
-
 //IIFE that contains initial song-loader function
 	{
 
@@ -23,7 +21,7 @@ $(document).ready(function(){
 			  })
 
 			function songLoadComplete(json) {
-				console.log( json );
+				// console.log( json );
 				songObject = json;
 				SongSpace.passJSON1(songObject);
 				let songNumber = songObject.length;
@@ -37,17 +35,16 @@ $(document).ready(function(){
 	{
 		SongSpace.loadMoreSongs = () => {
 
-			let moreSongsObject = [];
-			let moreSongsLoader = new XMLHttpRequest();
-			moreSongsLoader.addEventListener("load", moreSongsComplete);
-			moreSongsLoader.open("GET", "../json/music-2.json")
-			moreSongsLoader.send();
+			$.ajax({
+				url:"../json/music-2.json"
+			}).done(moreSongsComplete)
+			  .fail(function(error) {
+			  	alert("error")
+			  })
 
-			function moreSongsComplete(event) {
+			function moreSongsComplete(json) {
 				console.log( "More songs loaded.");
-
-				moreSongsObject = JSON.parse(event.target.responseText);
-				// console.log( "moreSongsObject", moreSongsObject );
+				moreSongsObject = json;
 				SongSpace.passJSON2(moreSongsObject);
 
 			}

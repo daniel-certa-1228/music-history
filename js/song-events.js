@@ -2,27 +2,21 @@ console.log( "song-delete.js" );
 
 // Adds delete functionality to song-list
 {
-
 	let songContainer = document.getElementById("song-list-div");
 
-
-	songContainer.addEventListener("click", (event) => {
+	$("#song-list-div").click(function() {
 		let clickTarget = event.target;
-		let songSelect = clickTarget.closest("div");
-		let parentDiv = songSelect.parentNode;
+		let songSelect = $(clickTarget).closest("div");
 
 		if (clickTarget.className === "delete-song-btn") {
-			parentDiv.removeChild(songSelect);
+			$(songSelect).remove();
 		}
-
+		//RUNS THE ADD MORE SONGS FUNCTION
 		if (clickTarget.className === "more-song-btn") {
-			console.log( "More Button Clicked" );
 			SongSpace.loadMoreSongs();
-			// console.log( "clickTarget", clickTarget );
 		}
 
-	});
-
+	})
 }
 
 /////////////////////////////////////////////////////////////
@@ -46,7 +40,6 @@ console.log( "song-delete.js" );
 				songArray.push(songObject[i])
 			};
 			
-
 			SongSpace.outputSongs(songArray);
 		}
 
@@ -67,13 +60,12 @@ console.log( "song-delete.js" );
 
 		SongSpace.outputSongs = (songArray) => {
 
-		let songContainer = document.getElementById('song-list-div');
-		songContainer.innerHTML="";
+		let songContainer = $('#song-list-div');
 
+		$(songContainer).empty();
 
 		for (let i = 0; i < songArray.length; i++) {
-			// let songs = songArray;
-			
+
 			let songList =	`<div id="song--${i}">
 							<p class="song-display-string">
 							${songArray[i].song} by ${songArray[i].artist} from the album ${songArray[i].album}<button type="button" class="delete-song-btn" id="dltBtn--${i}">X</button></p>
