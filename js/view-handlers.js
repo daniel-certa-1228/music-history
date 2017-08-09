@@ -1,38 +1,33 @@
 console.log( "event-listeners.js" );
 
+$(document).ready(function() {
 //This handles the different views////////////////////////
-let addMusic = document.getElementById("add-music");
-let controlPanel = document.getElementById("control-panel");
-let songDiv = document.getElementById("song-list-div");	
-let listLink = document.getElementById("listViewLink");
-let addLink = document.getElementById("addViewLink");
-let profileLink = document.getElementById("profileViewLink");
-{
-	SongSpace.listView = () => {
+	// let profileLink = document.getElementById("profileViewLink");
+	{
+		SongSpace.listView = () => {
 
-		controlPanel.classList.remove("hidden");
-		songDiv.classList.remove("hidden");
-		addMusic.classList.add("hidden");
+			$("#control-panel").removeClass('hidden');
+			$("#song-list-div").removeClass('hidden');
+			$("#add-music").addClass("hidden");
+		},
 
-	},
+		SongSpace.addView = () => {
 
-	SongSpace.addView = () => {
-	
-		addMusic.classList.remove("hidden");
-		controlPanel.classList.add("hidden");
-		songDiv.classList.add("hidden");
+			$("#add-music").removeClass("hidden");
+			$("#control-panel").addClass('hidden');
+			$("#song-list-div").addClass('hidden');
+		}
 
 	}
 
-}
+	$("#addViewLink").click(function() {
+		event.preventDefault();
+		SongSpace.addView();
+	})  
 
-addLink.addEventListener("click", (event) => {
-	event.preventDefault();
-	SongSpace.addView();
-});
+	$("#listViewLink").click(function() {
+		event.preventDefault();
+		SongSpace.listView();
+	})
 
-listLink.addEventListener("click", (event) => {
-	event.preventDefault();
-	SongSpace.listView();
-});
-
+})  //END DOCUMENT READY
